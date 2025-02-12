@@ -43,10 +43,11 @@ jobs:
         run: |
           Xvfb :99 -ac &
           export DISPLAY=:99
-          pytest --alluredir=allure-results --disable-warnings -vv
+          pytest --disable-warnings -vv
 
-      - name: Upload Test Results
+      - name: Upload Test Logs
         uses: actions/upload-artifact@v3
         with:
-          name: allure-results
-          path: allure-results
+          name: test-results
+          path: test-results
+
